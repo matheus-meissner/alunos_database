@@ -193,3 +193,13 @@ SELECT *
 SELECT *
   FROM aluno
  WHERE nome LIKE '%i%a%';
+
+ SELECT * FROM aluno WHERE idade != 36
+
+ SELECT * FROM aluno WHERE idade < 36
+
+ SELECT * FROM aluno WHERE idade BETWEEN 10 AND 36
+
+ SELECT * FROM aluno WHERE ativo = true
+ 
+ SELECT * FROM aluno WHERE ativo IS NULL
