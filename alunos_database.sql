@@ -211,8 +211,20 @@ SELECT * FROM ALUNO WHERE nome LIKE 'D%' AND cpf IS NOT NULL; --Adiciona condiç
 SELECT * FROM ALUNO WHERE nome LIKE 'Diogo' OR nome LIKE 'Rodrigo' OR nome LIKE 'Nico%'; --Adiciona condição OU ao filtro
 
 
+-- AULA 4
+-- ATIVIDADE 1
+DROP TABLE curso;
+CREATE TABLE curso ( -- UNIQUE, não permite que tenha dados duplicados
+	id INTEGER PRIMARY KEY, -- PRIMARY KEY, não pode ser nula e deve ser única!
+	nome VARCHAR(255) NOT NULL -- NOT NULL, não permite que valores nulos sejam inseridos na tabela
+);
 
+INSERT INTO curso (id, nome) VALUES (NULL, NULL);
 
+INSERT INTO curso (id, nome) VALUES (1, 'HTML');
+INSERT INTO curso (id, nome) VALUES (2, 'Javascript');
+
+SELECT * FROM curso;
 
 
 
