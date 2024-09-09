@@ -259,10 +259,13 @@ INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2,1);
 INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3,1); -- ALUNO INEXISTENTE
 
 SELECT * FROM aluno WHERE id = 1;
-SELECT * FROM aluno WHERE id = 1;
+SELECT * FROM curso WHERE id = 1;
 
 SELECT * FROM aluno WHERE id = 2;
-SELECT * FROM aluno WHERE id = 1;
+SELECT * FROM curso WHERE id = 1;
+
+SELECT * FROM aluno WHERE id = 3;
+SELECT * FROM curso WHERE id = 1;
 
 
 
