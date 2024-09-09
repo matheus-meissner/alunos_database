@@ -203,3 +203,39 @@ SELECT *
  SELECT * FROM aluno WHERE ativo = true
  
  SELECT * FROM aluno WHERE ativo IS NULL
+
+ -- ATIVIDADE 7
+ -- WHERE antende sempre a mesma linha, e não linhas separadas;
+SELECT * FROM ALUNO WHERE nome LIKE 'D%' AND cpf IS NOT NULL; --Adiciona condição E ao filtro
+
+SELECT * FROM ALUNO WHERE nome LIKE 'Diogo' OR nome LIKE 'Rodrigo' OR nome LIKE 'Nico%'; --Adiciona condição OU ao filtro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
