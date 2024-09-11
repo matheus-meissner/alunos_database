@@ -267,8 +267,18 @@ SELECT * FROM curso WHERE id = 1;
 SELECT * FROM aluno WHERE id = 3;
 SELECT * FROM curso WHERE id = 1;
 
+-- AULA 5
+-- JOIN
+SELECT * FROM aluno;
+SELECT * FROM curso;
 
+SELECT aluno.nome as aluno,
+		curso.nome as curso
+	FROM aluno 
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id 
+	JOIN curso ON curso.id = aluno_curso.curso_id
 
+	INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2, 2);
 
 
 
