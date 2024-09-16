@@ -280,9 +280,36 @@ SELECT aluno.nome as aluno,
 
 	INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2, 2);
 
+	INSERT INTO aluno (nome) VALUES ('Nico');
 
+	INSERT INTO curso (id, nome) VALUES (3, 'CSS');
 
+-- LEFT JOIN - Prioriza as informações contidas na tabela da esquerda (aluno_curso);
+SELECT aluno.nome as aluno,
+		curso.nome as curso
+	FROM aluno 
+LEFT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id 
+LEFT JOIN curso ON curso.id = aluno_curso.curso_id
 
+-- RIGHT JOIN - Prioriza as informações contidas na tabela da direita (curso);
+SELECT aluno.nome as aluno,
+		curso.nome as curso
+	FROM aluno 
+RIGHT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id 
+RIGHT JOIN curso ON curso.id = aluno_curso.curso_id
+
+-- FULL JOIN - Prioriza as informações contidas em ambas as tabelas (aluno_curso, curso);
+SELECT aluno.nome as aluno,
+		curso.nome as curso
+	FROM aluno 
+FULL JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id 
+FULL JOIN curso ON curso.id = aluno_curso.curso_id
+
+-- CROSS JOIN - Multiplica dados da tabela A pela tabela B;
+SELECT aluno.nome as aluno,
+		curso.nome as curso
+	FROM aluno 
+CROSS JOIN curso
 
 
 
