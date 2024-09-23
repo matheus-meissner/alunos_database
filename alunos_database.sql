@@ -336,7 +336,7 @@ CREATE TABLE aluno_curso (
 
 INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1,1);
 INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2,1);
-INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3,1); -- ALUNO INEXISTENTE
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3,1);
 INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1,3);
 
 SELECT * FROM aluno_curso;
@@ -347,14 +347,35 @@ SELECT aluno.nome as "Nome do Aluno",
 	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id 
 	JOIN curso ON curso.id = aluno_curso.curso_id
 
+-- UPDATE CASCADE
 
+UPDATE aluno SET id = 10 WHERE id = 2;
 
+DROP TABLE aluno_curso;
+CREATE TABLE aluno_curso (
+	aluno_id INTEGER,
+	curso_id INTEGER,
+	PRIMARY KEY (aluno_id, curso_id),
+	
+	FOREIGN KEY (aluno_id) -- PONTE ENTRE DADOS DA TABELA NOVA E ANTIGA (ponte entre inverntário e loja)
+		REFERENCES aluno (id)
+		ON DELETE CASCADE -- Permite deletar dados de mais de uma tagbela de uma vez;
+		ON UPDATE CASCADE, -- Permite fazer update de dados de mais de uma tagbela de uma vez;
 
+	FOREIGN KEY (curso_id)
+		REFERENCES curso (id)
+);
 
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2,1);
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3,1);
 
-
-
-
+SELECT  aluno.id AS aluno_id,
+		aluno.nome as "Nome do Aluno",
+		curso.id AS curso_id,
+		curso.nome as "Nome do Curso"
+	FROM aluno 
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id 
+	JOIN curso ON curso.id = aluno_curso.curso_id
 
 
 
