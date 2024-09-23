@@ -408,10 +408,11 @@ SELECT * FROM funcionarios ORDER BY 4 DESC, nome DESC, 2 ASC; --ASC significa as
 SELECT * FROM funcionarios ORDER BY 4 DESC, funcionarios.nome DESC, 2 ASC;
 
 
-
-
-
-
+-- LIMITANDO CONSULTAS
+SELECT * FROM funcionarios LIMIT 5; -- LIMIT limita até o determinado número;
+SELECT * FROM funcionarios ORDER BY nome LIMIT 5;
+-- OFFSET - Pula registro 1 e anda do 2 pra frente (começa a partir do número especificado);
+SELECT * FROM funcionarios ORDER BY id LIMIT 5 OFFSET 1;
 
 
 
