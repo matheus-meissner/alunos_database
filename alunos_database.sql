@@ -415,9 +415,19 @@ SELECT * FROM funcionarios ORDER BY nome LIMIT 5;
 SELECT * FROM funcionarios ORDER BY id LIMIT 5 OFFSET 1;
 
 
+-- AGREGAÇÃO
+-- COUNT - Retorna a quantidade de registros
+-- SUM -   Retorna a soma dos registros
+-- MAX -   Retorna o maior valor dos registros
+-- MIN -   Retorna o menor valor dos registros
+-- AVG -   Retorna a média dos registros
 
-
-
+SELECT COUNT (id),
+       SUM(id),
+       MAX(id),
+       MIN(id),
+       ROUND(AVG(id),0)
+  FROM funcionarios;
 
 
 
